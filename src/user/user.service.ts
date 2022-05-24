@@ -25,6 +25,10 @@ export class UserService {
     return this.userRepo.findOne(id);
   }
 
+  findUsername(username) {
+    return this.userRepo.findOne({username: username});
+  }
+
   update(id: number, updateUserDto: UpdateUserDto) {
     updateUserDto.id = id
     if(updateUserDto.password){
